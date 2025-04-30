@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Budget Planner</title>
+</head>
+<body>
+  <form method="POST">
+    <label>Enter Monthly Income:</label>
+    <input type="number" name="income" required>
+    <button type="submit">Calculate</button>
+  </form>
+
+  {% if suggested_budget %}
+    <h3>Suggested Allocation</h3>
+    <ul>
+      {% for category, amount in suggested_budget.items() %}
+        <li>{{ category }}: ${{ amount }}</li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</body>
+</html>
